@@ -12,12 +12,13 @@ public class Test01_231104 {
 		
 		Scanner scanner = new Scanner(System.in);
 		String s = scanner.nextLine();
-		String str = s.replace(" ", ""); // 공백 제거  
-		String[] S = str.split("");      //""기준으로 잘라서 배열에 저장
-		System.out.println(S[0]);
+		
+		// " "기준으로 잘라서 배열에 저장
+		String[] S = s.split(" ");
 		for(int i =0; i<S.length; i++) {
 			Integer.parseInt(S[i]);
 		}
+		
 		//최솟값
 		String min = S[0];
 		for(int i =0; i<S.length-1; i++) {
