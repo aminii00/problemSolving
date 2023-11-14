@@ -12,16 +12,28 @@ public class Test01_231104 {
 		
 		Scanner scanner = new Scanner(System.in);
 		String s = scanner.nextLine();
-		String str = s.replace(" ", ""); // 공백 제거
-		System.out.println(str);         
-		String[] S = str.split("");
-		
+		String str = s.replace(" ", ""); // 공백 제거  
+		String[] S = str.split("");      //""기준으로 잘라서 배열에 저장
+		System.out.println(S[0]);
+		for(int i =0; i<S.length; i++) {
+			Integer.parseInt(S[i]);
+		}
 		//최솟값
-		
-		
-		
+		String min = S[0];
+		for(int i =0; i<S.length-1; i++) {
+		if(Integer.parseInt(min)>Integer.parseInt(S[i+1])) {
+			min = S[i+1];
+		   }
+		}
 		//최댓값
-
+		String max = S[0];
+		for(int i =0; i<S.length-1; i++) {
+		if(Integer.parseInt(max)<Integer.parseInt(S[i+1])) {
+			max = S[i+1];
+		   }
+		}
+		
+		System.out.println("최댓값 : " +max +" 최소값: " +min);
 	}
 
 }
